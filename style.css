@@ -47,18 +47,20 @@ p{
     font-family: 'Archivo Black', sans-serif;
 }
 .spin{
-    animation: spinText 0.5s linear infinite;
+    animation: spinText 1s linear infinite;
     display: inline-block;
 }
 .heart{
     position: absolute;
     bottom: -20px;
     animation: floatUp linear forwards;
+    pointer-events: none;
 }
 .crown{
     position: absolute;
     bottom: -20px;
     animation: floatUp linear forwards;
+    pointer-events: none;
 }
 .star{
     position: absolute;
@@ -90,11 +92,14 @@ p{
     }
     50%{
         transform: rotate(180deg) scale(2);
+        transition: 0.5s ease;
     }
     75%{
         transform: rotate(270deg) scale(1.5);
+        transition: 0.5s ease;
     }
     100%{
         transform: rotate(360deg) scale(1);
+        transition: 0.5s ease;
     }
 }
