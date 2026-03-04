@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Athiti:wght@200;300;400;500;600;700&family=Bebas+Neue&family=Creepster&family=Dancing+Script:wght@400..700&family=Oswald:wght@200..700&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    background: rgb(204, 241, 255);
+}
+#float{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#btn{
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    border: 8px solid rgb(136, 247, 247);
+    background: rgb(253, 251, 234);
+    box-shadow: 0 0 50px rgb(132, 255, 239);
+    position: absolute;
+    padding: 15px 25px;
+    transition: all 0.2 ease;
+    animation: pop 1s linear infinite;
+
+}
+#btn:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 70px rgb(132, 255, 239);
+}
+#btn:focus{
+    animation: pop 1s linear infinite;
+}
+p{
+    font-family: Bebas Neue;
+    font-size: 22pt;
+    line-height: 30px;
+}
+#massage{
+    z-index: 1000;
+    color: rgb(255, 255, 255);
+    font-size: 30pt;
+    font-family: 'Archivo Black', sans-serif;
+}
+.spin{
+    animation: spinText 0.5s linear infinite;
+    display: inline-block;
+}
+.heart{
+    position: absolute;
+    bottom: -20px;
+    animation: floatUp linear forwards;
+}
+.crown{
+    position: absolute;
+    bottom: -20px;
+    animation: floatUp linear forwards;
+}
+.star{
+    position: absolute;
+    bottom: -20px;
+    animation: floatUp linear forwards;
+}
+@keyframes pop{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(0.2);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+@keyframes floatUp{
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+    }
+}
+@keyframes spinText{
+    0%{
+        transform: rotate(0deg) scale(1);
+    }
+    25%{
+        transform: rotate(90deg) scale(1.5);
+    }
+    50%{
+        transform: rotate(180deg) scale(2);
+    }
+    75%{
+        transform: rotate(270deg) scale(1.5);
+    }
+    100%{
+        transform: rotate(360deg) scale(1);
+    }
+}
