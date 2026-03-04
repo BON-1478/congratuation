@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONGRATULATIONS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="float">
+        <h1 id="massage"></h1>
+        <button id="btn">
+            <p>click me<br>bro‼️</p>
+        </button>
+    </div>
+    <script>
+        const btn = document.getElementById("btn");
+        const massage = document.getElementById("massage");
+        let count = 0;
+
+        btn.addEventListener("click", function () {
+            count++;
+            if (count < 8) {
+                const maxX = window.innerWidth - btn.offsetWidth;
+                const maxY = window.innerHeight - btn.offsetHeight;
+
+                btn.style.left = Math.random() * maxX + "px";
+                btn.style.top = Math.random() * maxY + "px";
+            }
+            else {
+                document.body.style.backgroundColor = "skyblue";
+                massage.innerHTML = "<span class='spin'>CONGRATUATION💐<span>";
+                
+                function createHeart(){
+                    const heart = document.createElement('div');
+                    heart.classList.add("heart");
+                    heart.textContent = "💖";
+                    
+                    heart.style.bottom = Math.random() * 100 + "vh";
+                    heart.style.left = Math.random() * 100 + "vh";
+                    heart.style.right = Math.random() * 100 + "vh";
+                    heart.style.fontSize = (20 + Math.random() * 40) + "px";
+                    heart.style.animationDuration = (5 + Math.random() * 4) + "s";
+                    
+                    document.body.appendChild(heart);
+                    
+                    setTimeout(() => {
+                        heart.remove();
+                    }, 6000);
+                }
+                function createCrown(){
+                    const crown = document.createElement('div');
+                    crown.classList.add("crown");
+                    crown.textContent = "👑";
+                    
+                    crown.style.top = Math.random() * 100 + "vh";
+                    crown.style.left = Math.random() * 100 + "vh";
+                    crown.style.right = Math.random() * 100 + "vh";
+                    crown.style.fontSize = (20 + Math.random() * 40) + "px";
+                    crown.style.animationDuration = (5 + Math.random() * 4) + "s";
+                    
+                    document.body.appendChild(crown);
+                    
+                    setTimeout(() => {
+                        crown.remove();
+                    }, 6000);
+                }
+                function createStar(){
+                    const star = document.createElement('div');
+                    star.classList.add("star");
+                    star.textContent = "✨";
+                    
+                    star.style.top = Math.random() * 100 + "vh";
+                    star.style.left = Math.random() * 100 + "vh";
+                    star.style.right = Math.random() * 100 + "vh";
+                    star.style.fontSize = (20 + Math.random() * 40) + "px";
+                    star.style.animationDuration = (5 + Math.random() * 4) + "s";
+                    
+                    document.body.appendChild(star);
+                    
+                    setTimeout(() => {
+                        star.remove();
+                    }, 6000);
+                }
+                crownInterval = setInterval(createCrown, 100);
+                heartInterval = setInterval(createHeart, 100);
+                starInterval = setInterval(createStar, 100);
+                btn.style.display = "none";
+            }
+        });
+    </script>
+</body>
+
+</html>
